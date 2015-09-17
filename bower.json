@@ -1,0 +1,21 @@
+{
+  "name": "4.4-github-profile",
+  "version": "0.0.0",
+  "authors": [
+    "Pierre Laferriere <polaferriere@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bourbon": "~4.2.5",
+    "handlebars": "~4.0.2",
+    "jquery": "~2.1.4",
+    "neat": "~1.7.2"
+  }
+}
