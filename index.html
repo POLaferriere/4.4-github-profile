@@ -3,8 +3,35 @@
 <head>
   <meta charset="UTF-8">
   <title>Document</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 </head>
 <body>
 
+  <header>
+    <div class="header-container">
+      <div class="logo-search">
+        <a href="#"><img src="assets/github-logo.png" alt="Github" class="header-logo"></a>
+        <input type="text" class="header-search" placeholder="Search GitHub">
+          <ul class="header-navs">
+            <a href="#">
+              <li class="header-nav">Pull requests</li>
+            </a>
+            <a href="#">
+              <li class="header-nav">Issues</li>
+            </a>
+            <a href="#">
+              <li class="header-nav">Gist</li>
+            </a>
+          </ul>
+      </div>
+      <div class="header-icons"></div>
+    </div>
+  </header>
+
+  <script src="bower_components/jquery/dist/jquery.js"></script>
+  <script src="scripts/main.js"></script>
 </body>
 </html>

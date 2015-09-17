@@ -1,0 +1,70 @@
+@import '../bower_components/bourbon/app/assets/stylesheets/bourbon';
+@import '../bower_components/neat/app/assets/stylesheets/neat';
+
+$max-width: 980px;
+$header: rgba(245, 245, 245, 1);
+$border: 1px solid rgba(204, 204, 204, 1);
+$dark-text: rgba(51, 51, 51, 1);
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 62.5%;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+//----------------Header------------------//
+header {
+  background-color: $header;
+}
+
+.header-container {
+  @include outer-container();
+  padding: 10px 0 5px;
+  min-width: $max-width;
+}
+
+.logo-search {
+  float: left;
+  vertical-align: middle;
+
+  > * {
+    display: inline-block;
+  }
+}
+
+.header-logo {
+  @include size(30px 30px);
+}
+
+.header-search {
+  position: relative;
+  top: -8px;
+  margin: 0 10px;
+  border: $border;
+  border-radius: 3px;
+  padding: 4px;
+  width: 350px;
+  line-height: 1.3rem;
+  font-size: .8rem;
+}
+
+.header-navs {
+  vertical-align: middle;
+
+  > a {
+    display: inline-block;
+    margin: 0 5px;
+  }
+}
+
+.header-nav {
+  height: 30px;
+  vertical-align: middle;
+  color: $dark-text;
+  font-size: .8rem;
+  font-weight: bold;
+}
