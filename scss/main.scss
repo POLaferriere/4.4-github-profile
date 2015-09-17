@@ -68,3 +68,39 @@ header {
   font-size: .8rem;
   font-weight: bold;
 }
+
+.header-icons {
+  float: right;
+  vertical-align: middle;
+
+  > * {
+    display: inline-block;
+    margin-left: 15px;
+  }
+}
+
+.fa-bell,
+.fa-plus {
+  color: $dark-text;
+  font-size: 1rem;
+}
+
+.triangle {
+  @include triangle(10px 5px, $dark-text, 'down');
+  position: relative;
+  top: 6px;
+  margin-left: 2px;
+}
+
+.profile-thumbnail {
+  @include size(25px 25px);
+  position: relative;
+  top: 5px;
+  border-radius: 3px;
+}
+
+.header-lists {
+  cursor: pointer;
+}
+
+//----------------Main Body-----------------//
