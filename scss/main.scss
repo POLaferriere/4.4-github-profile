@@ -104,3 +104,26 @@ header {
 }
 
 //----------------Main Body-----------------//
+.main-body-container {
+  @include outer-container();
+  border-bottom: $border;
+  padding: 20px;
+  min-width: $max-width;
+}
+
+//----------------Sidebar-------------------//
+.sidebar-container {
+  @include span-columns(3);
+}
+
+.profile-pic {
+  @include fill-parent();
+  height: 100%;
+  border-radius: 5px;
+}
+
+//----------------Repos------------------//
+.repos-container {
+  @include span-columns(9);
+  @include omega();
+}

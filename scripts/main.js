@@ -10,13 +10,15 @@ var repo = {
   headers: {"Authorization": "token 21d92ccad43c59f3681a32a26b66a41f04711abd"}
 };
 
-//AJAX request to get all repository objects, logs the objects
+//AJAX request to profile stats
 $.ajax(user).then(function(whatever){
   console.log(whatever);
-  var newThumbnail = whatever.avatar_url;
-  $('.profile-thumbnail').attr('src', newThumbnail);
+  $('.profile-thumbnail, .profile-pic').attr('src', whatever.avatar_url);
+  $('.user-full-name').text(whatever.name);
+  $('.user-name').text(whatever.login);
 });
 
+//AJAX request to repo stats
 $.ajax(repo).then(function(whatever){
   console.log(whatever);
 });

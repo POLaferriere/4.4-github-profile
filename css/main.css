@@ -93,3 +93,37 @@ header {
 
 .header-lists {
   cursor: pointer; }
+
+.main-body-container {
+  max-width: 980px;
+  margin-left: auto;
+  margin-right: auto;
+  border-bottom: 1px solid #cccccc;
+  padding: 20px;
+  min-width: 980px; }
+  .main-body-container::after {
+    clear: both;
+    content: "";
+    display: table; }
+
+.sidebar-container {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 23.23176%; }
+  .sidebar-container:last-child {
+    margin-right: 0; }
+
+.profile-pic {
+  width: 100%;
+  height: 100%;
+  border-radius: 5px; }
+
+.repos-container {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 74.41059%;
+  margin-right: 0; }
+  .repos-container:last-child {
+    margin-right: 0; }
