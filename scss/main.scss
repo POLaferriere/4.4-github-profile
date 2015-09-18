@@ -4,10 +4,14 @@
 $max-width: 980px;
 $header: rgba(245, 245, 245, 1);
 $border: 1px solid rgba(204, 204, 204, 1);
+$light-border: 1px solid rgba(238, 238, 238, 1);
 $dark-text: rgba(51, 51, 51, 1);
 $light-text: rgba(102, 102, 102, 1);
 $lighter-text: rgba(153, 153, 153, 1);
 $color-text: rgba(72, 125, 189, 1);
+$background-color: white;
+$new-repo: 180deg, rgba(160, 212, 109, 1), rgba(120, 168, 69, 1);
+$new-repo-border: 1px solid rgba(115, 162, 66, 1);
 
 body {
   font-family: $helvetica;
@@ -121,7 +125,7 @@ header {
 
 .profile {
   @include fill-parent();
-  border-bottom: $border;
+  border-bottom: $light-border;
   padding-bottom: 20px;
 
 
@@ -147,7 +151,7 @@ header {
 
 .email-joined-container {
   @include fill-parent();
-  border-bottom: $border;
+  border-bottom: $light-border;
   padding: 20px 0;
 
   .fa,
@@ -174,6 +178,8 @@ header {
 
 .follower-starred-container {
   @include fill-parent();
+  @include clearfix;
+  border-bottom: $light-border;
   padding: 20px 0;
 
   > * {
@@ -201,4 +207,158 @@ header {
 .repos-container {
   @include span-columns(9);
   @include omega();
+}
+
+.tabs-edit-container {
+  @include clearfix;
+  border-bottom: $border;
+
+  .tabs {
+    float: left;
+
+  }
+
+  button {
+    float: right;
+    border: $border;
+    border-radius: 3px;
+    background-color: $header;
+    padding: 5px 10px;
+    font-size: 1.2em;
+    font-weight: bold;
+
+    .fa {
+      margin-right: 3px;
+    }
+  }
+}
+
+.tab {
+  display: inline-block;
+  padding: 8px;
+  color: $dark-text;
+  font-size: 1.2em;
+
+  &.current {
+    position: relative;
+    bottom: -1px;
+    z-index: 1000;
+    border-top: $border;
+    border-right: $border;
+    border-left: $border;
+    background-color: $background-color;
+  }
+
+  .fa {
+    display: inline-block;
+    margin-right: 4px;
+    font-size: 1.2em;
+  }
+}
+
+.repo-search-container {
+  @include clearfix();
+  border-bottom: $border;
+  padding: 15px 0;
+
+  input,
+  .repo-search-button {
+    float: left;
+  }
+
+  .repo-search {
+    border: $border;
+    border-radius: 3px;
+    padding: 0 10px;
+    width: 250px;
+    line-height: 30px;
+    font-size: 1.2em;
+  }
+
+  .repo-search-button {
+    margin-left: 5px;
+    border: $border;
+    border-radius: 3px;
+    background-color: $header;
+    width: 65px;
+    line-height: 25px;
+    font-size: 1.2em;
+    font-weight: bold;
+  }
+
+  .new-repo {
+    margin-left: 5px;
+    border: $new-repo-border;
+    border-radius: 3px;
+    background: linear-gradient($new-repo);
+    width: 60px;
+    line-height: 25px;
+    color: $background-color;
+    font-size: 1.2em;
+    font-weight: bold;
+
+    .fa {
+      margin-right: 3px;
+    }
+  }
+
+  ul,
+  .new-repo {
+    float: right;
+  }
+
+}
+
+.category {
+  display: inline-block;
+  margin: 0 4px;
+  line-height: 30px;
+  color: $color-text;
+  font-size: 1.4em;
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  &.active {
+    color: $dark-text;
+  }
+}
+
+.repos {
+  border-bottom: $light-border;
+  padding: 30px 0 40px;
+}
+
+.main-line {
+  @include clearfix;
+  margin-bottom: 10px;
+
+  .repo-stats {
+    float: right;
+  }
+}
+
+.repo-name {
+  float: left;
+  color: $color-text;
+  font-size: 2em;
+  font-weight: bold;
+}
+
+.repo-stat {
+  display: inline-block;
+  margin: 0 5px;
+  color: $lighter-text;
+  font-size: 1.2em;
+  font-weight: bold;
+
+  .fa {
+    margin-right: 5px;
+  }
+}
+
+.repo-updated {
+  color: $lighter-text;
+  font-size: 1.2em;
 }

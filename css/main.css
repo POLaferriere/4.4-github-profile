@@ -116,7 +116,7 @@ header {
 
 .profile {
   width: 100%;
-  border-bottom: 1px solid #cccccc;
+  border-bottom: 1px solid #eeeeee;
   padding-bottom: 20px; }
   .profile .profile-pic {
     width: 100%;
@@ -134,7 +134,7 @@ header {
 
 .email-joined-container {
   width: 100%;
-  border-bottom: 1px solid #cccccc;
+  border-bottom: 1px solid #eeeeee;
   padding: 20px 0; }
   .email-joined-container .fa,
   .email-joined-container a,
@@ -151,7 +151,12 @@ header {
 
 .follower-starred-container {
   width: 100%;
+  border-bottom: 1px solid #eeeeee;
   padding: 20px 0; }
+  .follower-starred-container::after {
+    clear: both;
+    content: "";
+    display: table; }
   .follower-starred-container > * {
     float: left;
     display: block;
@@ -178,3 +183,125 @@ header {
   margin-right: 0; }
   .repos-container:last-child {
     margin-right: 0; }
+
+.tabs-edit-container {
+  border-bottom: 1px solid #cccccc; }
+  .tabs-edit-container::after {
+    clear: both;
+    content: "";
+    display: table; }
+  .tabs-edit-container .tabs {
+    float: left; }
+  .tabs-edit-container button {
+    float: right;
+    border: 1px solid #cccccc;
+    border-radius: 3px;
+    background-color: whitesmoke;
+    padding: 5px 10px;
+    font-size: 1.2em;
+    font-weight: bold; }
+    .tabs-edit-container button .fa {
+      margin-right: 3px; }
+
+.tab {
+  display: inline-block;
+  padding: 8px;
+  color: #333333;
+  font-size: 1.2em; }
+  .tab.current {
+    position: relative;
+    bottom: -1px;
+    z-index: 1000;
+    border-top: 1px solid #cccccc;
+    border-right: 1px solid #cccccc;
+    border-left: 1px solid #cccccc;
+    background-color: white; }
+  .tab .fa {
+    display: inline-block;
+    margin-right: 4px;
+    font-size: 1.2em; }
+
+.repo-search-container {
+  border-bottom: 1px solid #cccccc;
+  padding: 15px 0; }
+  .repo-search-container::after {
+    clear: both;
+    content: "";
+    display: table; }
+  .repo-search-container input,
+  .repo-search-container .repo-search-button {
+    float: left; }
+  .repo-search-container .repo-search {
+    border: 1px solid #cccccc;
+    border-radius: 3px;
+    padding: 0 10px;
+    width: 250px;
+    line-height: 30px;
+    font-size: 1.2em; }
+  .repo-search-container .repo-search-button {
+    margin-left: 5px;
+    border: 1px solid #cccccc;
+    border-radius: 3px;
+    background-color: whitesmoke;
+    width: 65px;
+    line-height: 25px;
+    font-size: 1.2em;
+    font-weight: bold; }
+  .repo-search-container .new-repo {
+    margin-left: 5px;
+    border: 1px solid #73a242;
+    border-radius: 3px;
+    background: linear-gradient(180deg, #a0d46d, #78a845);
+    width: 60px;
+    line-height: 25px;
+    color: white;
+    font-size: 1.2em;
+    font-weight: bold; }
+    .repo-search-container .new-repo .fa {
+      margin-right: 3px; }
+  .repo-search-container ul,
+  .repo-search-container .new-repo {
+    float: right; }
+
+.category {
+  display: inline-block;
+  margin: 0 4px;
+  line-height: 30px;
+  color: #487dbd;
+  font-size: 1.4em; }
+  .category:hover {
+    text-decoration: underline; }
+  .category.active {
+    color: #333333; }
+
+.repos {
+  border-bottom: 1px solid #eeeeee;
+  padding: 30px 0 40px; }
+
+.main-line {
+  margin-bottom: 10px; }
+  .main-line::after {
+    clear: both;
+    content: "";
+    display: table; }
+  .main-line .repo-stats {
+    float: right; }
+
+.repo-name {
+  float: left;
+  color: #487dbd;
+  font-size: 2em;
+  font-weight: bold; }
+
+.repo-stat {
+  display: inline-block;
+  margin: 0 5px;
+  color: #999999;
+  font-size: 1.2em;
+  font-weight: bold; }
+  .repo-stat .fa {
+    margin-right: 5px; }
+
+.repo-updated {
+  color: #999999;
+  font-size: 1.2em; }

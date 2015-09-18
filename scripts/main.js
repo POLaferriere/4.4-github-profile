@@ -37,15 +37,22 @@ $.ajax(user).then(function(whatever){
 
 //AJAX request to starred repos
 $.ajax(starred).then(function(whatever){
+  console.log(whatever);
   $('.js-starred').text(whatever.length);
 });
 
 //AJAX request to repo stats
-$.ajax(repo).then(function(whatever){
-  console.log(whatever);
+$.ajax(repo).then(function(whatever) {
+  whatever.forEach(addRepos);
 });
 
 var convertMonths = function(i) {
   var months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
   return months[i-1];
+};
+
+var addRepos = function(repos) {
+  var source = $('#repo-template').html();
+  var template = Handlebars.compile(source);
+  $('.repos-list').append(template(repos));
 };

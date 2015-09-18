@@ -91,9 +91,97 @@
 
     </div>
 
-    <div class="repos-container"></div>
+    <div class="repos-container">
+
+      <div class="tabs-edit-container">
+
+        <ul class="tabs">
+          <a href="#">
+            <li class="tab"><i class="fa fa-plus-square-o"></i>Contributions</li>
+          </a>
+          <a href="#">
+            <li class="tab current"><i class="fa fa-book"></i>Repositories</li>
+          </a>
+          <a href="#">
+            <li class="tab"><i class="fa fa-rss"></i>Public activity</li>
+          </a>
+        </ul>
+
+        <button class="edit-profile"><i class="fa fa-pencil"></i>Edit profile</button>
+
+      </div>
+
+      <div class="repo-search-container">
+        <input type="text" class="repo-search" placeholder="Find a repository...">
+        <button class="repo-search-button">Search</button>
+        <button class="new-repo"><i class="fa fa-book"></i>New</button>
+        <ul class="categories">
+          <a href="#">
+            <li class="category active">All</li>
+          </a>
+          <a href="#">
+            <li class="category">Public</li>
+          </a>
+          <a href="#">
+            <li class="category">Private</li>
+          </a>
+          <a href="#">
+            <li class="category">Sources</li>
+          </a>
+          <a href="#">
+            <li class="category">Forks</li>
+          </a>
+          <a href="#">
+            <li class="category">Mirrors</li>
+          </a>
+        </ul>
+      </div>
+
+      <div class="repos-list">
+        <div class="repos">
+          <div class="main-line">
+            <a href="#">
+              <h1 class="repo-name">Repo Name Here</h1>
+            </a>
+            <ul class="repo-stats">
+              <li class="repo-stat js-language">Javascript</li>
+              <a href="#">
+                <li class="repo-stat js-stargazer"><i class="fa fa-star"></i>0</li>
+              </a>
+              <a href="#">
+                <li class="repo-stat js-forks"><i class="fa fa-code-fork"></i>0</li>
+              </a>
+            </ul>
+          </div>
+          <h3 class="repo-updated">Updated 2 days ago</h3>
+        </div>
+      </div>
+
+    </div>
+
   </div>
 
+  <script id="repo-template" type="text/x-handlebars-template">
+    <div class="repos">
+      <div class="main-line">
+        <a href="#">
+          <h1 class="repo-name">{{name}}</h1>
+        </a>
+        <ul class="repo-stats">
+          <li class="repo-stat js-language">{{language}}</li>
+          <a href="#">
+            <li class="repo-stat js-stargazer"><i class="fa fa-star"></i>{{stargazers_count}}</li>
+          </a>
+          <a href="#">
+            <li class="repo-stat js-forks"><i class="fa fa-code-fork"></i>{{forks}}</li>
+          </a>
+        </ul>
+      </div>
+      <h3 class="repo-updated">Updated 2 days ago</h3>
+    </div>
+  </script>
+
+  <script src="bower_components/handlebars/handlebars.min.js"></script>
   <script src="bower_components/jquery/dist/jquery.js"></script>
   <script src="scripts/main.js"></script>
 </body>
