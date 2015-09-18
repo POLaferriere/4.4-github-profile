@@ -5,9 +5,12 @@ $max-width: 980px;
 $header: rgba(245, 245, 245, 1);
 $border: 1px solid rgba(204, 204, 204, 1);
 $dark-text: rgba(51, 51, 51, 1);
+$light-text: rgba(102, 102, 102, 1);
+$lighter-text: rgba(153, 153, 153, 1);
+$color-text: rgba(72, 125, 189, 1);
 
 body {
-  font-family: "Roboto", sans-serif;
+  font-family: $helvetica;
   font-size: 62.5%;
 }
 
@@ -116,10 +119,57 @@ header {
   @include span-columns(3);
 }
 
-.profile-pic {
+.profile {
   @include fill-parent();
-  height: 100%;
-  border-radius: 5px;
+  border-bottom: $border;
+  padding-bottom: 20px;
+
+
+  .profile-pic {
+    @include fill-parent();
+    border-radius: 5px;
+    height: 100%;
+  }
+
+  .user-full-name {
+    line-height: 30px;
+    color: $dark-text;
+    font-size: 2.6em;
+    font-weight: bold;
+  }
+
+  .user-name {
+    line-height: 30px;
+    color: $light-text;
+    font-size: 2em;
+  }
+}
+
+.email-joined-container {
+  @include fill-parent();
+  border-bottom: $border;
+  padding: 20px 0;
+
+  .fa,
+  a,
+  span {
+    color: $dark-text;
+    font-size: 1.4em;
+  }
+
+  a {
+    color: $color-text;
+  }
+
+  h4 {
+    line-height: 25px;
+  }
+
+  .fa {
+    width: 25px;
+    color: $lighter-text;
+  }
+
 }
 
 //----------------Repos------------------//

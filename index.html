@@ -33,7 +33,7 @@
         <a href="#">
           <li class="header-icon"><i class="fa fa-bell"></i></li></a>
         <li class="header-icon header-lists"><i class="fa fa-plus"></i><span class="triangle"></span></li>
-        <li class="header-icon header-lists"><img src="assets/default.jpg" alt="Profile" class="profile-thumbnail"><span class="triangle"></span></li>
+        <li class="header-icon header-lists"><img src="assets/default.jpg" alt="Profile" class="profile-thumbnail js-profile-thumbnail"><span class="triangle"></span></li>
       </ul>
 
     </div>
@@ -42,9 +42,17 @@
   <div class="main-body-container">
 
     <div class="sidebar-container">
-      <img src="assets/default.jpg" alt="Profile" class="profile-pic">
-      <h1 class="user-full-name"></h1>
-      <h3 class="user-name"></h3>
+
+      <div class="profile">
+        <img src="assets/default.jpg" alt="Profile" class="profile-pic js-profile-pic">
+        <h1 class="user-full-name js-user-full-name"></h1>
+        <h3 class="user-name js-user-name"></h3>
+      </div>
+
+      <div class="email-joined-container">
+        <h4 class="email"><i class="fa fa-envelope-o"></i><a href="#" class="js-email"></a></h4>
+        <h4 class="joined"><i class="fa fa-clock-o"></i><span class="js-joined"></span></h5>
+      </div>
 
     </div>
 

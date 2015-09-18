@@ -13,12 +13,21 @@ var repo = {
 //AJAX request to profile stats
 $.ajax(user).then(function(whatever){
   console.log(whatever);
-  $('.profile-thumbnail, .profile-pic').attr('src', whatever.avatar_url);
-  $('.user-full-name').text(whatever.name);
-  $('.user-name').text(whatever.login);
+  $('.js-profile-thumbnail, .js-profile-pic').attr('src', whatever.avatar_url);
+  $('.js-user-full-name').text(whatever.name);
+  $('.js-user-name').text(whatever.login);
+  $('.js-email').text(whatever.email);
+  $('.js-email').attr('href', "mailto:" + whatever.email);
+  var dateJoined = new Date(whatever.created_at);
+  $('.js-joined').text("Joined on " + convertMonths(dateJoined.getMonth()) + " " + dateJoined.getDate() + ", " + dateJoined.getFullYear());
 });
 
 //AJAX request to repo stats
 $.ajax(repo).then(function(whatever){
   console.log(whatever);
 });
+
+var convertMonths = function(i) {
+  var months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+  return months[i-1];
+};
