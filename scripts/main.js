@@ -4,11 +4,18 @@ var user = {
   headers: {"Authorization": "token 21d92ccad43c59f3681a32a26b66a41f04711abd"}
 };
 
+var starred = {
+  url: 'https://api.github.com/users/POLaferriere/starred',
+  method: "GET",
+  headers: {"Authorization": "token 21d92ccad43c59f3681a32a26b66a41f04711abd"}
+};
+
 var repo = {
   url: 'https://api.github.com/user/repos',
   method: "GET",
   headers: {"Authorization": "token 21d92ccad43c59f3681a32a26b66a41f04711abd"}
 };
+
 
 //AJAX request to profile stats
 $.ajax(user).then(function(whatever){
@@ -20,6 +27,17 @@ $.ajax(user).then(function(whatever){
   $('.js-email').attr('href', "mailto:" + whatever.email);
   var dateJoined = new Date(whatever.created_at);
   $('.js-joined').text("Joined on " + convertMonths(dateJoined.getMonth()) + " " + dateJoined.getDate() + ", " + dateJoined.getFullYear());
+  $('.js-follower').text(whatever.followers);
+  $('.js-following').text(whatever.following);
+  $('.js-follower-link').attr('href', whatever.followers_url);
+  $('.js-following-link').attr('href', whatever.following_url);
+  $('.js-starred-link').attr('href', whatever.starred_url);
+
+});
+
+//AJAX request to starred repos
+$.ajax(starred).then(function(whatever){
+  $('.js-starred').text(whatever.length);
 });
 
 //AJAX request to repo stats

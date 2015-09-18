@@ -149,6 +149,27 @@ header {
     width: 25px;
     color: #999999; }
 
+.follower-starred-container {
+  width: 100%;
+  padding: 20px 0; }
+  .follower-starred-container > * {
+    float: left;
+    display: block;
+    margin-right: 10.1484%;
+    width: 26.56773%;
+    text-align: center; }
+    .follower-starred-container > *:last-child {
+      margin-right: 0; }
+    .follower-starred-container > * h3 {
+      color: #487dbd;
+      font-size: 3em;
+      font-weight: bold; }
+    .follower-starred-container > * h5 {
+      color: #666666;
+      font-size: 1.1em; }
+  .follower-starred-container:last-child {
+    margin-right: 0; }
+
 .repos-container {
   float: left;
   display: block;

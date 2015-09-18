@@ -172,6 +172,31 @@ header {
 
 }
 
+.follower-starred-container {
+  @include fill-parent();
+  padding: 20px 0;
+
+  > * {
+    @include span-columns(1 of 3);
+    text-align: center;
+
+    h3 {
+      color: $color-text;
+      font-size: 3em;
+      font-weight: bold;
+    }
+
+    h5 {
+      color: $light-text;
+      font-size: 1.1em;
+    }
+  }
+
+  &:last-child {
+    @include omega();
+  }
+}
+
 //----------------Repos------------------//
 .repos-container {
   @include span-columns(9);

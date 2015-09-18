@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Document</title>
@@ -8,32 +9,41 @@
   <link rel="stylesheet" href="css/main.css">
   <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet" type="text/css">
 </head>
+
 <body>
 
   <header>
     <div class="header-container">
 
       <div class="logo-search">
-        <a href="#"><img src="assets/github-logo.png" alt="Github" class="header-logo"></a>
+        <a href="#">
+          <img src="assets/github-logo.png" alt="Github" class="header-logo">
+        </a>
         <input type="text" class="header-search" placeholder="Search GitHub">
-          <ul class="header-navs">
-            <a href="#">
-              <li class="header-nav">Pull requests</li>
-            </a>
-            <a href="#">
-              <li class="header-nav">Issues</li>
-            </a>
-            <a href="#">
-              <li class="header-nav">Gist</li>
-            </a>
-          </ul>
+        <ul class="header-navs">
+          <a href="#">
+            <li class="header-nav">Pull requests</li>
+          </a>
+          <a href="#">
+            <li class="header-nav">Issues</li>
+          </a>
+          <a href="#">
+            <li class="header-nav">Gist</li>
+          </a>
+        </ul>
       </div>
 
       <ul class="header-icons">
         <a href="#">
-          <li class="header-icon"><i class="fa fa-bell"></i></li></a>
-        <li class="header-icon header-lists"><i class="fa fa-plus"></i><span class="triangle"></span></li>
-        <li class="header-icon header-lists"><img src="assets/default.jpg" alt="Profile" class="profile-thumbnail js-profile-thumbnail"><span class="triangle"></span></li>
+          <li class="header-icon"><i class="fa fa-bell"></i></li>
+        </a>
+        <li class="header-icon header-lists"><i class="fa fa-plus"></i>
+          <span class="triangle"></span>
+        </li>
+        <li class="header-icon header-lists">
+          <img src="assets/default.jpg" alt="Profile" class="profile-thumbnail js-profile-thumbnail">
+          <span class="triangle"></span>
+        </li>
       </ul>
 
     </div>
@@ -50,8 +60,33 @@
       </div>
 
       <div class="email-joined-container">
-        <h4 class="email"><i class="fa fa-envelope-o"></i><a href="#" class="js-email"></a></h4>
-        <h4 class="joined"><i class="fa fa-clock-o"></i><span class="js-joined"></span></h5>
+        <h4 class="email"><i class="fa fa-envelope-o"></i>
+          <a href="#" class="js-email"></a>
+        </h4>
+        <h4 class="joined"><i class="fa fa-clock-o"></i>
+          <span class="js-joined"></span>
+        </h4>
+      </div>
+
+      <div class="follower-starred-container">
+        <a href="#" class="js-follower-link">
+          <div class="follower">
+            <h3 class="js-follower"></h3>
+            <h5 class="follower-text">Follower</h5>
+          </div>
+        </a>
+        <a href="#" class="js-starred-link">
+          <div class="starred">
+            <h3 class="js-starred"></h3>
+            <h5 class="starred-text">Starred</h5>
+          </div>
+        </a>
+        <a href="#" class="js-following-link">
+          <div class="following">
+            <h3 class="js-following"></h3>
+            <h5 class="following-text">Following</h5>
+          </div>
+        </a>
       </div>
 
     </div>
@@ -62,4 +97,5 @@
   <script src="bower_components/jquery/dist/jquery.js"></script>
   <script src="scripts/main.js"></script>
 </body>
+
 </html>
