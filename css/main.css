@@ -302,6 +302,7 @@ header {
   .repo-stat .fa {
     margin-right: 5px; }
 
-.repo-updated {
+.repo-lines h3 {
+  line-height: 20px;
   color: #999999;
   font-size: 1.2em; }

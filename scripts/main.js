@@ -11,7 +11,7 @@ var starred = {
 };
 
 var repo = {
-  url: 'https://api.github.com/user/repos',
+  url: 'https://api.github.com/user/repos?sort=updated',
   method: "GET",
   headers: {"Authorization": "token 21d92ccad43c59f3681a32a26b66a41f04711abd"}
 };
@@ -44,6 +44,7 @@ $.ajax(starred).then(function(whatever){
 //AJAX request to repo stats
 $.ajax(repo).then(function(whatever) {
   whatever.forEach(addRepos);
+
 });
 
 var convertMonths = function(i) {
@@ -55,4 +56,21 @@ var addRepos = function(repos) {
   var source = $('#repo-template').html();
   var template = Handlebars.compile(source);
   $('.repos-list').append(template(repos));
+  // console.log(template(repos));
+  // console.log(repos.name);
+  if (repos.fork === true) {
+    writeForked(repos);    // console.log(writeForked(repos));
+  }
+};
+
+var writeForked = function(repo) {
+  $.ajax('https://api.github.com/repos/POLaferriere/' + repo.name).then(function(forkedRepo) {
+    console.log(forkedRepo);
+    var source = '<h3><i class="fa fa-code-fork"> forked from <a href="{{parent.html_url}}" style="color:rgba(72, 125, 189, 1)">{{parent.full_name}}</a></h3>';
+    // console.log(source);
+    var template = Handlebars.compile(source);
+    console.log(template(forkedRepo));
+    var selector = 'h1:contains(' + repo.name + ')';
+    $(selector).parent().parent().siblings('.repo-lines').prepend(template(forkedRepo));
+  });
 };

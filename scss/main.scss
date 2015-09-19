@@ -358,7 +358,11 @@ header {
   }
 }
 
-.repo-updated {
-  color: $lighter-text;
-  font-size: 1.2em;
+.repo-lines {
+
+  h3 {
+    line-height: 20px;
+    color: $lighter-text;
+    font-size: 1.2em;
+  }
 }
