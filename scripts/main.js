@@ -16,6 +16,12 @@ var repo = {
   headers: {"Authorization": "token 21d92ccad43c59f3681a32a26b66a41f04711abd"}
 };
 
+var notifications = {
+  url: 'https://api.github.com/notifications',
+  method: "GET",
+  headers: {"Authorization": "token 21d92ccad43c59f3681a32a26b66a41f04711abd"}
+};
+
 
 //AJAX request to profile stats
 $.ajax(user).then(function(whatever){
@@ -37,15 +43,19 @@ $.ajax(user).then(function(whatever){
 
 //AJAX request to starred repos
 $.ajax(starred).then(function(whatever){
-  console.log(whatever);
   $('.js-starred').text(whatever.length);
 });
 
 //AJAX request to repo stats
 $.ajax(repo).then(function(whatever) {
   whatever.forEach(addRepos);
-
 });
+
+$.ajax(notifications).then(function(whatever) {
+  console.log(whatever);
+});
+
+
 
 var convertMonths = function(i) {
   var months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
@@ -67,7 +77,7 @@ var addRepos = function(repos) {
 
 var writeForked = function(repo) {
   $.ajax('https://api.github.com/repos/POLaferriere/' + repo.name).then(function(forkedRepo) {
-    var source = '<h3><i class="fa fa-code-fork"> forked from <a href="{{parent.html_url}}" style="color:rgba(72, 125, 189, 1)">{{parent.full_name}}</a></h3>';
+    var source = '<h3><i class="fa fa-code-fork"> forked from <a href="{{parent.html_url}}" class="forked-link" style="color:rgba(72, 125, 189, 1)">{{parent.full_name}}</a></h3>';
     var template = Handlebars.compile(source);
     var selector = 'h1:contains(' + repo.name + ')';
     $(selector).parent().parent().siblings('.repo-lines').prepend(template(forkedRepo));

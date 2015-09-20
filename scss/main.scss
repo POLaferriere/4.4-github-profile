@@ -8,9 +8,12 @@ $light-border: 1px solid rgba(238, 238, 238, 1);
 $dark-text: rgba(51, 51, 51, 1);
 $light-text: rgba(102, 102, 102, 1);
 $lighter-text: rgba(153, 153, 153, 1);
+$lightest-text: rgba(204, 204, 204, 1);
+$button-hover: rgba(235, 235, 235, 1);
 $color-text: rgba(72, 125, 189, 1);
 $background-color: white;
 $new-repo: 180deg, rgba(160, 212, 109, 1), rgba(120, 168, 69, 1);
+$new-repo-hover: 180deg, rgba(150, 202, 99, 1), rgba(110, 158, 59, 1);
 $new-repo-border: 1px solid rgba(115, 162, 66, 1);
 
 body {
@@ -45,7 +48,12 @@ header {
 
 .header-logo {
   @include size(30px 30px);
+  color: $dark-text;
   font-size: 30px;
+
+  &:hover {
+    color: $color-text;
+  }
 }
 
 .header-search {
@@ -75,6 +83,10 @@ header {
   color: $dark-text;
   font-size: .8rem;
   font-weight: bold;
+
+  &:hover {
+    color: $color-text;
+  }
 }
 
 .header-icons {
@@ -97,8 +109,16 @@ header {
   @include triangle(10px 5px, $dark-text, 'down');
   display: inline-block;
   position: relative;
-  top: 0px;
+  top: -2px;
   margin-left: 2px;
+}
+
+.header-icon:hover .fa {
+  color: $color-text;
+}
+
+.header-icon:hover .triangle {
+  @include triangle(10px 5px, $color-text, 'down');
 }
 
 .profile-thumbnail {
@@ -169,6 +189,10 @@ header {
 
   h4 {
     line-height: 25px;
+
+    &:hover a {
+      text-decoration: underline;
+    }
   }
 
   .fa {
@@ -187,6 +211,10 @@ header {
   > * {
     @include span-columns(1 of 3);
     text-align: center;
+
+    &:hover h5 {
+      color: $color-text;
+    }
 
     h3 {
       color: $color-text;
@@ -220,18 +248,25 @@ header {
 
   }
 
-  button {
-    float: right;
-    border: $border;
-    border-radius: 3px;
-    background-color: $header;
-    padding: 5px 10px;
-    font-size: 1.2em;
-    font-weight: bold;
 
-    .fa {
-      margin-right: 3px;
-    }
+}
+
+.edit-profile {
+  float: right;
+  border: $border;
+  border-radius: 3px;
+  background-color: $header;
+  cursor: pointer;
+  padding: 5px 10px;
+  font-size: 1.2em;
+  font-weight: bold;
+
+  &:hover {
+    background-color: $button-hover;
+  }
+
+  .fa {
+    margin-right: 3px;
   }
 }
 
@@ -282,10 +317,15 @@ header {
     border: $border;
     border-radius: 3px;
     background-color: $header;
+    cursor: pointer;
     width: 65px;
     line-height: 25px;
     font-size: 1.2em;
     font-weight: bold;
+
+    &:hover {
+      background-color: $button-hover;
+    }
   }
 
   .new-repo {
@@ -293,11 +333,16 @@ header {
     border: $new-repo-border;
     border-radius: 3px;
     background: linear-gradient($new-repo);
+    cursor: pointer;
     width: 60px;
     line-height: 25px;
     color: $background-color;
     font-size: 1.2em;
     font-weight: bold;
+
+    &:hover {
+      background: linear-gradient($new-repo-hover);
+    }
 
     .fa {
       margin-right: 3px;
@@ -346,6 +391,10 @@ header {
   color: $color-text;
   font-size: 2em;
   font-weight: bold;
+
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
 .repo-stat {
@@ -358,6 +407,18 @@ header {
   .fa {
     margin-right: 5px;
   }
+}
+
+.repo-stat-star:hover {
+  color: $color-text;
+}
+
+.repo-stat-forks:hover {
+  color: $color-text;
+}
+
+.forked-link:hover {
+  text-decoration: underline;
 }
 
 .repo-lines {
@@ -377,7 +438,12 @@ header {
   text-align: center;
 
   .fa {
+    color: $lightest-text;
     font-size: 3em;
+
+    &:hover {
+      color: $lighter-text;
+    }
   }
 
   .left-footer {
@@ -414,6 +480,10 @@ header {
   }
 }
 
-.footer-link {
+.footer-link, .footer-copy {
   font-size: 1.2em;
+}
+
+.footer-link:hover {
+  text-decoration: underline;
 }

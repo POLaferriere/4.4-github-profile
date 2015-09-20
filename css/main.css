@@ -37,7 +37,10 @@ header {
 .header-logo {
   height: 30px;
   width: 30px;
+  color: #333333;
   font-size: 30px; }
+  .header-logo:hover {
+    color: #487dbd; }
 
 .header-search {
   position: relative;
@@ -62,6 +65,8 @@ header {
   color: #333333;
   font-size: .8rem;
   font-weight: bold; }
+  .header-nav:hover {
+    color: #487dbd; }
 
 .header-icons {
   float: right;
@@ -83,8 +88,18 @@ header {
   border-top: 5px solid #333333;
   display: inline-block;
   position: relative;
-  top: 0px;
+  top: -2px;
   margin-left: 2px; }
+
+.header-icon:hover .fa {
+  color: #487dbd; }
+
+.header-icon:hover .triangle {
+  height: 0;
+  width: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid #487dbd; }
 
 .profile-thumbnail {
   height: 25px;
@@ -147,6 +162,8 @@ header {
     color: #487dbd; }
   .email-joined-container h4 {
     line-height: 25px; }
+    .email-joined-container h4:hover a {
+      text-decoration: underline; }
   .email-joined-container .fa {
     width: 25px;
     color: #999999; }
@@ -167,6 +184,8 @@ header {
     text-align: center; }
     .follower-starred-container > *:last-child {
       margin-right: 0; }
+    .follower-starred-container > *:hover h5 {
+      color: #487dbd; }
     .follower-starred-container > * h3 {
       color: #487dbd;
       font-size: 3em;
@@ -194,16 +213,20 @@ header {
     display: table; }
   .tabs-edit-container .tabs {
     float: left; }
-  .tabs-edit-container button {
-    float: right;
-    border: 1px solid #cccccc;
-    border-radius: 3px;
-    background-color: whitesmoke;
-    padding: 5px 10px;
-    font-size: 1.2em;
-    font-weight: bold; }
-    .tabs-edit-container button .fa {
-      margin-right: 3px; }
+
+.edit-profile {
+  float: right;
+  border: 1px solid #cccccc;
+  border-radius: 3px;
+  background-color: whitesmoke;
+  cursor: pointer;
+  padding: 5px 10px;
+  font-size: 1.2em;
+  font-weight: bold; }
+  .edit-profile:hover {
+    background-color: #ebebeb; }
+  .edit-profile .fa {
+    margin-right: 3px; }
 
 .tab {
   display: inline-block;
@@ -245,20 +268,26 @@ header {
     border: 1px solid #cccccc;
     border-radius: 3px;
     background-color: whitesmoke;
+    cursor: pointer;
     width: 65px;
     line-height: 25px;
     font-size: 1.2em;
     font-weight: bold; }
+    .repo-search-container .repo-search-button:hover {
+      background-color: #ebebeb; }
   .repo-search-container .new-repo {
     margin-left: 5px;
     border: 1px solid #73a242;
     border-radius: 3px;
     background: linear-gradient(180deg, #a0d46d, #78a845);
+    cursor: pointer;
     width: 60px;
     line-height: 25px;
     color: white;
     font-size: 1.2em;
     font-weight: bold; }
+    .repo-search-container .new-repo:hover {
+      background: linear-gradient(180deg, #96ca63, #6e9e3b); }
     .repo-search-container .new-repo .fa {
       margin-right: 3px; }
   .repo-search-container ul,
@@ -294,6 +323,8 @@ header {
   color: #487dbd;
   font-size: 2em;
   font-weight: bold; }
+  .repo-name:hover {
+    text-decoration: underline; }
 
 .repo-stat {
   display: inline-block;
@@ -303,6 +334,15 @@ header {
   font-weight: bold; }
   .repo-stat .fa {
     margin-right: 5px; }
+
+.repo-stat-star:hover {
+  color: #487dbd; }
+
+.repo-stat-forks:hover {
+  color: #487dbd; }
+
+.forked-link:hover {
+  text-decoration: underline; }
 
 .repo-lines h3 {
   line-height: 20px;
@@ -320,7 +360,10 @@ header {
     content: "";
     display: table; }
   .footer-container .fa {
+    color: #cccccc;
     font-size: 3em; }
+    .footer-container .fa:hover {
+      color: #999999; }
   .footer-container .left-footer {
     float: left; }
   .footer-container .right-footer {
@@ -340,5 +383,8 @@ header {
 .right-footer-links > * {
   display: inline-block; }
 
-.footer-link {
+.footer-link, .footer-copy {
   font-size: 1.2em; }
+
+.footer-link:hover {
+  text-decoration: underline; }

@@ -16,7 +16,7 @@
     <div class="header-container">
 
       <div class="logo-search">
-        <a href="#">
+        <a href="https://github.com">
           <i class="fa fa-github header-logo"></i>
         </a>
         <input type="text" class="header-search" placeholder="Search GitHub">
@@ -107,7 +107,7 @@
           </a>
         </ul>
 
-        <button class="edit-profile"><i class="fa fa-pencil"></i>Edit profile</button>
+        <a href="https://github.com/account"><button class="edit-profile"><i class="fa fa-pencil"></i>Edit profile</button></a>
 
       </div>
 
@@ -146,10 +146,10 @@
 
   <footer>
     <div class="footer-container">
-      <i class="fa fa-github"></i>
+      <a href="https://github.com"><i class="fa fa-github"></i></a>
       <div class="left-footer">
         <ul class="left-footer-links">
-          <li class="footer-link">&copy; 2015 GitHub, Inc.</li>
+          <li class="footer-copy">&copy; 2015 GitHub, Inc.</li>
           <a href="#">
             <li class="footer-link">Terms</li>
           </a>
@@ -204,10 +204,10 @@
         <ul class="repo-stats">
           <li class="repo-stat js-language">{{language}}</li>
           <a href="#">
-            <li class="repo-stat js-stargazer"><i class="fa fa-star"></i>{{stargazers_count}}</li>
+            <li class="repo-stat repo-stat-star js-stargazer"><i class="fa fa-star"></i>{{stargazers_count}}</li>
           </a>
           <a href="#">
-            <li class="repo-stat js-forks"><i class="fa fa-code-fork"></i>{{forks}}</li>
+            <li class="repo-stat repo-stat-forks js-forks"><i class="fa fa-code-fork"></i>{{forks}}</li>
           </a>
         </ul>
       </div>
