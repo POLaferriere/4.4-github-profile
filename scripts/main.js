@@ -53,6 +53,7 @@ $.ajax(repo).then(function(whatever) {
 
 $.ajax(notifications).then(function(whatever) {
   console.log(whatever);
+  $('.js-notification-tooltip').text('You have ' + whatever.length + ' unread notifications');
 });
 
 

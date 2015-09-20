@@ -10,6 +10,7 @@ $light-text: rgba(102, 102, 102, 1);
 $lighter-text: rgba(153, 153, 153, 1);
 $lightest-text: rgba(204, 204, 204, 1);
 $button-hover: rgba(235, 235, 235, 1);
+$popup-text: rgba(255, 255, 255, 1);
 $color-text: rgba(72, 125, 189, 1);
 $background-color: white;
 $new-repo: 180deg, rgba(160, 212, 109, 1), rgba(120, 168, 69, 1);
@@ -90,6 +91,7 @@ header {
 }
 
 .header-icons {
+  position: relative;
   float: right;
   vertical-align: middle;
 
@@ -113,12 +115,47 @@ header {
   margin-left: 2px;
 }
 
+.header-icon {
+  position: relative;
+  text-align: center;
+}
+
 .header-icon:hover .fa {
   color: $color-text;
 }
 
+.header-icon:hover .tooltip {
+  visibility: visible;
+}
+
+.header-icon:hover .tooltip-triangle {
+  visibility: visible;
+}
+
 .header-icon:hover .triangle {
   @include triangle(10px 5px, $color-text, 'down');
+}
+
+.notification-tooltip {
+  position: absolute;
+  bottom: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: $dark-text;
+  padding: 10px;
+  visibility: hidden;
+  text-align: center;
+  white-space: nowrap;
+  color: $popup-text;
+}
+
+.tooltip-triangle {
+  @include triangle(14px 7px, $dark-text, 'up');
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  visibility: hidden;
 }
 
 .profile-thumbnail {
