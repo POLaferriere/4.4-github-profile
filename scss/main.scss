@@ -45,6 +45,7 @@ header {
 
 .header-logo {
   @include size(30px 30px);
+  font-size: 30px;
 }
 
 .header-search {
@@ -94,8 +95,9 @@ header {
 
 .triangle {
   @include triangle(10px 5px, $dark-text, 'down');
+  display: inline-block;
   position: relative;
-  top: 6px;
+  top: 0px;
   margin-left: 2px;
 }
 
@@ -114,7 +116,7 @@ header {
 .main-body-container {
   @include outer-container();
   border-bottom: $border;
-  padding: 20px;
+  padding: 20px 20px 30px;
   min-width: $max-width;
 }
 
@@ -365,4 +367,53 @@ header {
     color: $lighter-text;
     font-size: 1.2em;
   }
+}
+
+//--------------Footer----------------//
+
+.footer-container {
+  @include outer-container();
+  padding: 30px 0;
+  text-align: center;
+
+  .fa {
+    font-size: 3em;
+  }
+
+  .left-footer {
+    float: left;
+  }
+
+  .right-footer {
+    float: right;
+  }
+}
+
+.left-footer-links {
+
+  a {
+    padding: 0 5px;
+    color: $color-text;
+  }
+
+  > * {
+    display: inline-block;
+  }
+
+}
+
+.right-footer-links {
+
+  a {
+    padding: 0 5px;
+    color: $color-text;
+  }
+
+  > * {
+    display: inline-block;
+  }
+}
+
+.footer-link {
+  font-size: 1.2em;
 }

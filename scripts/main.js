@@ -56,6 +56,9 @@ var addRepos = function(repos) {
   var source = $('#repo-template').html();
   var template = Handlebars.compile(source);
   $('.repos-list').append(template(repos));
+  if(repos.description !== null){
+    writeDescription(repos);
+  }
   writeTimePassed(repos);
   if (repos.fork === true) {
     writeForked(repos);    // console.log(writeForked(repos));
@@ -75,5 +78,12 @@ var writeTimePassed = function(repo) {
   var timePassed = moment(repo.updated_at).fromNow();
   var selector = 'h1:contains(' + repo.name + ')';
   var newHTML = '<h3 class="repo-updated">Updated ' + timePassed +'</h3>';
+  $(selector).parent().parent().siblings('.repo-lines').append(newHTML);
+};
+
+var writeDescription = function (repo) {
+  var description = repo.description;
+  var selector = 'h1:contains(' + repo.name + ')';
+  var newHTML = '<h3 class="repo-updated">' + description + '</h3>';
   $(selector).parent().parent().siblings('.repo-lines').append(newHTML);
 };
