@@ -56,8 +56,7 @@ var addRepos = function(repos) {
   var source = $('#repo-template').html();
   var template = Handlebars.compile(source);
   $('.repos-list').append(template(repos));
-  // console.log(template(repos));
-  // console.log(repos.name);
+  writeTimePassed(repos);
   if (repos.fork === true) {
     writeForked(repos);    // console.log(writeForked(repos));
   }
@@ -65,12 +64,16 @@ var addRepos = function(repos) {
 
 var writeForked = function(repo) {
   $.ajax('https://api.github.com/repos/POLaferriere/' + repo.name).then(function(forkedRepo) {
-    console.log(forkedRepo);
     var source = '<h3><i class="fa fa-code-fork"> forked from <a href="{{parent.html_url}}" style="color:rgba(72, 125, 189, 1)">{{parent.full_name}}</a></h3>';
-    // console.log(source);
     var template = Handlebars.compile(source);
-    console.log(template(forkedRepo));
     var selector = 'h1:contains(' + repo.name + ')';
     $(selector).parent().parent().siblings('.repo-lines').prepend(template(forkedRepo));
   });
+};
+
+var writeTimePassed = function(repo) {
+  var timePassed = moment(repo.updated_at).fromNow();
+  var selector = 'h1:contains(' + repo.name + ')';
+  var newHTML = '<h3 class="repo-updated">Updated ' + timePassed +'</h3>';
+  $(selector).parent().parent().siblings('.repo-lines').append(newHTML);
 };
