@@ -112,7 +112,7 @@ header {
   border-right: 5px solid transparent;
   border-top: 5px solid #487dbd; }
 
-.notification-tooltip {
+.tooltip {
   position: absolute;
   bottom: -40px;
   left: 50%;
@@ -170,10 +170,18 @@ header {
   width: 100%;
   border-bottom: 1px solid #eeeeee;
   padding-bottom: 20px; }
+  .profile .profile-pic-container {
+    position: relative; }
+    .profile .profile-pic-container .tooltip {
+      background-color: rgba(51, 51, 51, 0.9); }
   .profile .profile-pic {
     width: 100%;
     border-radius: 5px;
     height: 100%; }
+  .profile .profile-pic-container:hover .tooltip {
+    visibility: visible; }
+  .profile .profile-pic-container:hover .tooltip-triangle {
+    visibility: visible; }
   .profile .user-full-name {
     line-height: 30px;
     color: #333333;

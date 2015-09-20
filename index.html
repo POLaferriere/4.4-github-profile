@@ -21,20 +21,20 @@
         </a>
         <input type="text" class="header-search" placeholder="Search GitHub">
         <ul class="header-navs">
-          <a href="#">
+          <a href="https://github.com/pulls">
             <li class="header-nav">Pull requests</li>
           </a>
-          <a href="#">
+          <a href="https://github.com/issues">
             <li class="header-nav">Issues</li>
           </a>
-          <a href="#">
+          <a href="https://gists.github.com">
             <li class="header-nav">Gist</li>
           </a>
         </ul>
       </div>
 
       <ul class="header-icons">
-        <a href="#">
+        <a href="https://github.com/notifications">
           <li class="header-icon">
             <i class="fa fa-bell"></i>
             <div class="tooltip js-notification-tooltip"></div>
@@ -62,7 +62,13 @@
     <div class="sidebar-container">
 
       <div class="profile">
-        <img src="assets/default.jpg" alt="Profile" class="profile-pic js-profile-pic">
+        <a href="https://github.com/account">
+          <div class="profile-pic-container">
+            <img src="assets/default.jpg" alt="Profile" class="profile-pic js-profile-pic">
+            <div class="tooltip">Change your avatar</div>
+            <div class="tooltip-triangle"></div>
+          </div>
+        </a>
         <h1 class="user-full-name js-user-full-name"></h1>
         <h3 class="user-name js-user-name"></h3>
       </div>
@@ -83,7 +89,7 @@
             <h5 class="follower-text">Follower</h5>
           </div>
         </a>
-        <a href="#" class="js-starred-link">
+        <a href="https://github.com/starred" class="js-starred-link">
           <div class="starred">
             <h3 class="js-starred"></h3>
             <h5 class="starred-text">Starred</h5>
@@ -115,7 +121,9 @@
           </a>
         </ul>
 
-        <a href="https://github.com/account"><button class="edit-profile"><i class="fa fa-pencil"></i>Edit profile</button></a>
+        <a href="https://github.com/account">
+          <button class="edit-profile"><i class="fa fa-pencil"></i>Edit profile</button>
+        </a>
 
       </div>
 
@@ -158,44 +166,44 @@
       <div class="left-footer">
         <ul class="left-footer-links">
           <li class="footer-copy">&copy; 2015 GitHub, Inc.</li>
-          <a href="#">
+          <a href="https://github.com/site/terms">
             <li class="footer-link">Terms</li>
           </a>
-          <a href="#">
+          <a href="https://github.com/site/privacy">
             <li class="footer-link">Privacy</li>
           </a>
-          <a href="#">
+          <a href="https://github.com/security">
             <li class="footer-link">Security</li>
           </a>
-          <a href="#">
+          <a href="https://github.com/contact">
             <li class="footer-link">Contact</li>
           </a>
-          <a href="#">
+          <a href="https://help.github.com/">
             <li class="footer-link">Help</li>
           </a>
         </ul>
       </div>
       <div class="right-footer">
         <ul class="right-footer-links">
-          <a href="#">
+          <a href="https://status.github.com/">
             <li class="footer-link">Status</li>
           </a>
-          <a href="#">
+          <a href="https://developer.github.com/">
             <li class="footer-link">API</li>
           </a>
-          <a href="#">
+          <a href="https://training.github.com/">
             <li class="footer-link">Training</li>
           </a>
-          <a href="#">
+          <a href="https://shop.github.com/">
             <li class="footer-link">Shop</li>
           </a>
-          <a href="#">
+          <a href="https://github.com/blog">
             <li class="footer-link">Blog</li>
           </a>
-          <a href="#">
+          <a href="https://github.com/about">
             <li class="footer-link">About</li>
           </a>
-          <a href="#">
+          <a href="https://github.com/pricing">
             <li class="footer-link">Pricing</li>
           </a>
         </ul>
@@ -206,7 +214,7 @@
   <script id="repo-template" type="text/x-handlebars-template">
     <div class="repos">
       <div class="main-line">
-        <a href="#">
+        <a href="{{html_url}}">
           <h1 class="repo-name">{{name}}</h1>
         </a>
         <ul class="repo-stats">

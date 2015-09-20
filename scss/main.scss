@@ -136,7 +136,7 @@ header {
   @include triangle(10px 5px, $color-text, 'down');
 }
 
-.notification-tooltip {
+.tooltip {
   position: absolute;
   bottom: -40px;
   left: 50%;
@@ -187,11 +187,26 @@ header {
   border-bottom: $light-border;
   padding-bottom: 20px;
 
+  .profile-pic-container {
+    position: relative;
+
+    .tooltip {
+      background-color: rgba(51, 51, 51, 0.9);
+    }
+  }
 
   .profile-pic {
     @include fill-parent();
     border-radius: 5px;
     height: 100%;
+  }
+
+  .profile-pic-container:hover .tooltip {
+    visibility: visible;
+  }
+
+  .profile-pic-container:hover .tooltip-triangle {
+    visibility: visible;
   }
 
   .user-full-name {

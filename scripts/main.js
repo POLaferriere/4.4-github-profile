@@ -34,10 +34,9 @@ $.ajax(user).then(function(whatever){
   var dateJoined = new Date(whatever.created_at);
   $('.js-joined').text("Joined on " + convertMonths(dateJoined.getMonth()) + " " + dateJoined.getDate() + ", " + dateJoined.getFullYear());
   $('.js-follower').text(whatever.followers);
+  $('.js-follower-link').attr('href', 'https://github.com/' + whatever.login + '/followers');
   $('.js-following').text(whatever.following);
-  $('.js-follower-link').attr('href', whatever.followers_url);
-  $('.js-following-link').attr('href', whatever.following_url);
-  $('.js-starred-link').attr('href', whatever.starred_url);
+  $('.js-following-link').attr('href', 'https://github.com/' + whatever.login + '/following');
 
 });
 
