@@ -1,25 +1,25 @@
 var user = {
   url: 'https://api.github.com/users/POLaferriere',
   method: "GET",
-  headers: {"Authorization": "token be9af9fd503c77f03ff9f11dcfab2981d384b199"}
+  headers: {"Authorization": "token 19f27dd884914ab3fffd2afb618bf0e8936ceeeb"}
 };
 
 var starred = {
   url: 'https://api.github.com/users/POLaferriere/starred',
   method: "GET",
-  headers: {"Authorization": "token be9af9fd503c77f03ff9f11dcfab2981d384b199"}
+  headers: {"Authorization": "token 19f27dd884914ab3fffd2afb618bf0e8936ceeeb"}
 };
 
 var repo = {
   url: 'https://api.github.com/user/repos?sort=updated',
   method: "GET",
-  headers: {"Authorization": "token be9af9fd503c77f03ff9f11dcfab2981d384b199"}
+  headers: {"Authorization": "token 19f27dd884914ab3fffd2afb618bf0e8936ceeeb"}
 };
 
 var notifications = {
   url: 'https://api.github.com/notifications',
   method: "GET",
-  headers: {"Authorization": "token be9af9fd503c77f03ff9f11dcfab2981d384b199"}
+  headers: {"Authorization": "token 19f27dd884914ab3fffd2afb618bf0e8936ceeeb"}
 };
 
 
