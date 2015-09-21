@@ -29,6 +29,8 @@ $.ajax(user).then(function(whatever){
   $('.js-profile-thumbnail, .js-profile-pic').attr('src', whatever.avatar_url);
   $('.js-user-full-name').text(whatever.name);
   $('.js-user-name').text(whatever.login);
+  $('.js-profile-popup-name').text(whatever.login);
+  $('.js-profile-popup-link').attr('href', 'https://github.com/' + whatever.login);
   $('.js-email').text(whatever.email);
   $('.js-email').attr('href', "mailto:" + whatever.email);
   var dateJoined = new Date(whatever.created_at);
@@ -97,3 +99,19 @@ var writeDescription = function (repo) {
   var newHTML = '<h3 class="repo-updated">' + description + '</h3>';
   $(selector).parent().parent().siblings('.repo-lines').append(newHTML);
 };
+
+$('.js-create').on('click', function() {
+  $('.create-popup').addClass('clicked');
+});
+
+$('.create-popup').on('click', function() {
+  $('.create-popup').removeClass('clicked');
+});
+
+$('.js-profile').on('click', function() {
+  $('.profile-popup').addClass('clicked');
+});
+
+$('.profile-popup').on('click', function() {
+  $('.profile-popup').removeClass('clicked');
+});

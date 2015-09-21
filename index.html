@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Document</title>
+  <title>GitHub Repo</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/main.css">
@@ -41,12 +41,12 @@
             <div class="tooltip-triangle"></div>
           </li>
         </a>
-        <li class="header-icon header-lists"><i class="fa fa-plus"></i>
+        <li class="header-icon header-lists js-create"><i class="fa fa-plus"></i>
           <span class="triangle"></span>
           <div class="tooltip">Create new...</div>
           <div class="tooltip-triangle"></div>
         </li>
-        <li class="header-icon header-lists">
+        <li class="header-icon header-lists js-profile">
           <img src="assets/default.jpg" alt="Profile" class="profile-thumbnail js-profile-thumbnail">
           <span class="triangle"></span>
           <div class="tooltip">View profile and more</div>
@@ -210,6 +210,58 @@
       </div>
     </div>
   </footer>
+
+  <div class="create-popup">
+    <div class="create-popup-container">
+      <ul class="create-popup-items">
+        <a href="https://github.com/new">
+          <li class="create-popup-item">New Repository</li>
+        </a>
+        <a href="https://github.com/organizations/new">
+          <li class="create-popup-item">New organization</li>
+        </a>
+        <div class="popup-triangle"></div>
+      </ul>
+    </div>
+  </div>
+
+  <div class="profile-popup">
+    <div class="profile-popup-container">
+      <div class="profile-popup-box">
+        <div class="profile-popup-name">
+          <h3>Signed in as</h3>
+          <h3 class="js-profile-popup-name popup-name-text"></h3>
+        </div>
+        <div class="profile-popup-middle-links">
+          <ul class="popup-middle-links">
+            <a href="" class="js-profile-popup-link">
+              <li class="popup-middle-link">Your profile</li>
+            </a>
+            <a href="https://github.com/stars">
+              <li class="popup-middle-link">Your stars</li>
+            </a>
+            <a href="https://github.com/explore">
+              <li class="popup-middle-link">Explore</li>
+            </a>
+            <a href="https://help.github.com">
+              <li class="popup-middle-link">Help</li>
+            </a>
+          </ul>
+        </div>
+        <div class="profile-popup-bottom-links">
+          <ul class="popup-bottom-links">
+            <a href="https://github.com/settings/profile">
+              <li class="popup-bottom-link">Settings</li>
+            </a>
+            <a href="">
+              <li class="popup-bottom-link">Sign out</li>
+            </a>
+          </ul>
+        </div>
+        <div class="popup-triangle"></div>
+      </div>
+    </div>
+  </div>
 
   <script id="repo-template" type="text/x-handlebars-template">
     <div class="repos">

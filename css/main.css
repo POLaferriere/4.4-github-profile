@@ -431,3 +431,135 @@ header {
 
 .footer-link:hover {
   text-decoration: underline; }
+
+.create-popup {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: transparent;
+  height: 0;
+  overflow: hidden; }
+  .create-popup.clicked {
+    height: auto;
+    overflow: auto; }
+  .create-popup .create-popup-container {
+    max-width: 980px;
+    margin-left: auto;
+    margin-right: auto;
+    min-width: 980px;
+    position: relative; }
+    .create-popup .create-popup-container::after {
+      clear: both;
+      content: "";
+      display: table; }
+
+.create-popup-items {
+  position: absolute;
+  top: 50px;
+  right: 30px;
+  background-color: white;
+  padding: 10px 0;
+  border: 1px solid #cccccc;
+  border-radius: 3px;
+  width: 200px;
+  font-size: 1.4em;
+  white-space: nowrap; }
+
+.create-popup-item {
+  padding: 10px; }
+  .create-popup-item:hover {
+    background-color: #487dbd;
+    color: white; }
+
+.profile-popup {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: transparent;
+  height: 0;
+  overflow: hidden; }
+  .profile-popup.clicked {
+    height: auto;
+    overflow: auto; }
+  .profile-popup .profile-popup-container {
+    max-width: 980px;
+    margin-left: auto;
+    margin-right: auto;
+    min-width: 980px;
+    position: relative; }
+    .profile-popup .profile-popup-container::after {
+      clear: both;
+      content: "";
+      display: table; }
+
+.profile-popup-box {
+  position: absolute;
+  top: 60px;
+  right: -10px;
+  background-color: white;
+  padding: 10px 0;
+  border: 1px solid #cccccc;
+  border-radius: 3px;
+  width: 200px;
+  font-size: 1.4em;
+  white-space: nowrap; }
+
+.profile-popup-name {
+  padding: 10px;
+  color: #666666;
+  border-bottom: 1px solid #cccccc; }
+  .profile-popup-name h3 {
+    line-height: 20px; }
+  .profile-popup-name .popup-name-text {
+    font-weight: bold; }
+
+.popup-middle-links {
+  border-bottom: 1px solid #cccccc;
+  padding: 5px 0; }
+
+.popup-middle-link {
+  padding: 0 10px;
+  line-height: 30px; }
+  .popup-middle-link:hover {
+    background-color: #487dbd;
+    color: white; }
+
+.popup-bottom-links {
+  bottom-border: 1px solid #cccccc;
+  padding: 5px 0; }
+
+.popup-bottom-link {
+  padding: 0 10px;
+  line-height: 30px; }
+  .popup-bottom-link:hover {
+    background-color: #487dbd;
+    color: white; }
+
+/* Required for Down Triangle */
+.popup-triangle::before, .popup-triangle::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-color: transparent;
+  border-top: 0; }
+
+/* Stroke */
+.popup-triangle:before {
+  top: -16px;
+  right: 21px;
+  /* If 1px darken stroke slightly */
+  border-bottom-color: #cccccc;
+  border-width: 16px; }
+
+/* Fill */
+.popup-triangle:after {
+  top: -15px;
+  right: 22px;
+  border-bottom-color: white;
+  border-width: 15px; }
