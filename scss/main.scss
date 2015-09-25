@@ -670,7 +670,7 @@ header {
 
 
 /* Required for Down Triangle */
-  .popup-triangle::before, .popup-triangle::after {
+.popup-triangle::before, .popup-triangle::after {
     content: "";
     position: absolute;
     width: 0;
